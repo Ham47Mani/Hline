@@ -1,0 +1,11 @@
+//--> Main Rules
+* { @include prefixAll(box-sizing, border-box); }
+
+//--> Make Style For Body
+body {
+    --main-Color: #{$mainColor};
+    overflow: hidden;
+}
+
+//--> Make Font Family To Elements
+h1, h2, h3, h4, .lead { font-family: 'Droid Sans', sans-serif}

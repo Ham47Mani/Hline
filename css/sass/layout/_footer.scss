@@ -1,0 +1,31 @@
+//======================================= Start Footer ============================
+footer {
+    padding-top: 40px; background: #111; color: #CCC;
+    h3 { letter-spacing: 1px; margin: 30px 0 20px; color: var(--main-Color)}
+    .three-column {
+        overflow: hidden;
+        li { width: 33.33333%; float: left; padding: 5px 0 }
+    }
+    .social-list {
+        overflow: hidden;
+        margin: 20px 0 10px;
+        li {
+            float: left;
+            margin-right: 6px;
+            margin-bottom: 6px;
+            @include opacity(.5);
+            @include prefixAll(transition, all .7s ease-in-out);
+            &:hover { @include opacity(1) }
+        }
+    }
+    .img-thumbnail { background-color: rgba(0, 0, 0, .2); border: 1px solid #333; margin-bottom: 5px }
+    .copyright {
+        background-color: #333;
+        color: #AAA;
+        padding: 15px 0;
+        margin-top: 40px;
+        font-size: 16px;
+        span { color: var(--main-Color) }
+    }
+}
+//======================================= End Footer ============================

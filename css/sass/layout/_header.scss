@@ -1,0 +1,54 @@
+//======================================= Start Header ============================
+//--> Import Mixins
+@import '../helpers/mixins';
+
+/* ------------- Start NavBar ------------- */
+    .navbar-inverse {
+        min-height: 70px;
+        .navbar-nav {
+            & > .active > a, & > .active > a:hover, & > .active > a:focus,
+            .dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+                color: #FFF;
+                background-color: var(--main-Color);
+            }
+            & > li > a { padding-bottom: 25px; padding-top: 25px; font-size:  16px }
+            & > li > a { color: #B8B8B8 }
+            & > li:not(:nth-child(3)) > a:hover { border-bottom: 2px solid var(--main-Color)}
+            /* ------------- Start Dropdown menu ------------- */
+            .dropdown-menu {
+                background-color: #333;
+                min-width: 200px;
+                left: 0;
+                right: auto;
+                border-top: 3px solid var(--main-Color);
+                & > li {
+                    & > a {
+                        color: #FFF;
+                        padding: 6px 20px;
+                        @include prefixAll(transition, all .3s ease-in-out);
+                        &:hover, &:focus { padding-left: 30px; background-color: var(--main-Color)}
+                    }
+                }
+                .divider { background-color: var(--main-Color) }
+            }
+        }
+        /* ------------- Start Brand Name ------------- */
+        .navbar-brand {
+            font-size: 30px;
+            line-height: 40px;
+            color: #B8B8B8;
+            span { font-weight: bold; color: var(--main-Color) }
+        }
+        /* ------------- Start NavBar Toggle ------------- */
+        .navbar-toggle {  margin-top: 18px }
+
+        //--> Style In Small Screen
+        @include SScreen {
+            .navbar-nav {
+                &> li > a { padding-top: 10px; padding-bottom: 10px}
+                .open .dropdown-menu > li:hover > a { background-color: #E41B17; padding-left: 40px }
+            }
+            &.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse { max-height: none }
+        }
+    }
+//======================================= End Header ============================

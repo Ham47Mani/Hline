@@ -1,0 +1,305 @@
+//======================================= Start Carousel ============================
+.carousel {
+    .carousel-indicators {
+        bottom: 70px;
+        li {
+            width: 15px;
+            height: 15px;
+            border: 1px solid #EEE;
+            @include prefixAll(transition, all .7s ease-in-out);
+            &.active { background: var(--main-Color); border-color: var(--main-Color) }
+        }
+    }
+    .carousel-inner {
+        .item {
+            img { width: 100% }
+            .carousel-caption {
+                top: 150px;
+                .h1 { font-size: 50px; font-weight: bold; margin-bottom: 50px }
+                .lead { margin: 30px 10px 50px }
+                .btn {min-width: 150px; padding: 10px 10px; margin: 10px 15px; border-radius: 10px }
+            }
+        }
+    }
+
+    //--> Style In Small Screen
+    @include SScreen {
+        .carousel-inner .item {
+            .carousel-caption {
+                top: 35px;
+                h1 {font-size: 20px}
+                .lead {font-size: 10px; margin-bottom: 10px}
+                .btn {min-width: 0; padding:5px; margin: 0 5px}
+            }
+        }
+    }
+    //--> Style In Medium Screen
+    @include MScreen {
+        .item {
+            .carousel-caption {
+                top: 70px;
+                h1 {font-size: 35px }
+                .lead {font-size: 16px }
+            }
+        }
+    }
+    //--> Style In Large Screen
+    @include LScreen {
+        .item { .carousel-caption { top: 90px } }
+        .carousel-indicators {bottom: 10px}
+    }
+}
+//======================================= End Carousel ============================
+
+//======================================= Start About ============================
+.about {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    overflow: hidden;
+    h1 { font-weight: bold }
+    span{ font-weight: 900; color: var(--main-Color) }
+    .lead { color: #888; font-size: 25px; margin-top: 20px }
+
+    //--> Style In Small Screen
+    @include SScreen {
+        h1 { font-size: 28px }
+        p { font-size: 14px }
+    }
+}
+//======================================= End About ============================
+
+//======================================= Start Features ============================
+.features {
+    background-color: #EEE;
+    padding-top: 60px;
+    padding-bottom: 40px;
+    overflow: hidden;
+    .h1 { font-weight: bold; margin-bottom: 50px }
+    .feat {
+        margin-bottom: 30px;
+        span { font-size: 25px; color: #666}
+        p { line-height: 1.5em }
+    }
+}
+//======================================= End Features ============================
+
+//======================================= Start Testimonials ============================
+.testmonials {
+    padding-top: 60px; padding-bottom: 60px; overflow: hidden;
+    .h1 { font-weight: bold; margin-bottom: 50px }
+    .carousel {
+        .carousel-inner {
+            min-height: 180px;
+            .item {
+                .lead { line-height: 1.5em; margin-bottom: 10px }
+                span { font-size: 22px; font-weight: bold; color: var(--main-Color) }
+            }
+        }
+        .carousel-indicators {
+            position: static;
+            width: 100%;
+            margin-left: auto;
+            padding-top: 20px;
+            li {
+                text-indent: 0;
+                width: 80px;
+                height: 80px;
+                opacity: .5;
+                border: 3px solid #FFF;
+                border-radius: 50%;
+                overflow: hidden;
+                margin: 5px;
+                @include prefixAll(transition, all .7s ease-in-out);
+                img { max-width: 100% }
+            }
+            .active { width: 80px; height: 80px; opacity: 1; background: none; border-color: var(--main-Color) }
+        }
+    }
+    //--> Style In Small Screen
+    @include SScreen {
+        h1 {font-size: 30px }
+        p {font-size: 14px }
+        .carousel-indicators {
+            li {width:60px; height:60px }
+            &.active {width:60px; height:60px }
+        }
+    }
+}
+//======================================= End Testimonials ============================
+
+//======================================= Start Price Table ============================
+.price {
+    padding-top: 60px; padding-bottom: 60px; overflow: hidden; background-color: #EEE;
+    .h1 { font-weight: bold; margin-bottom: 50px }
+    .price_box {
+        background: #FFF; padding: 10px; border: 1px solid #DDD; margin-bottom: 15px;
+        h2 { margin: 5px 0 15px }
+        p {
+            font-size: 35px;
+            font-weight: bold;
+            color: #666;
+            width: 100px;
+            height: 100px;
+            background: #F3F3F3;
+            border-radius: 50%;
+            line-height: 100px;
+            border: 2px solid #EEE;
+            @include prefixAll(transition, all .7s ease-in-out);
+        }
+        &:hover p {
+            border: 2px solid var(--main-Color);
+            @include prefixAll(transform, scale(1.2,1.2) rotate(360deg));
+        }
+        ul { line-height: 250%; font-size: 18px }
+        a { margin-bottom: 10px; }
+    }
+}
+//======================================= End Price Table ============================
+
+//======================================= Start Team ============================
+.team {
+    background: url("../imgs/team/bg.png") no-repeat center center fixed;
+    width: 100%;
+    color: #FFF;
+    padding-top: 60px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    @include bgCover;
+    .h1 { font-weight: bold; margin-bottom: 50px }
+    .person {
+        margin-bottom: 40px;
+        img {
+            @include prefixAll(transition, all .7s ease-in-out);
+            @include opacity(.7);
+        }
+        &:hover img {
+            @include opacity(1);
+            @include prefixAll(transform, scale(1.1,1.1));
+        }
+        h3 {}
+        p {}
+        i { color: #CCC }
+        &:hover i { color: #FFF }
+    }
+}
+//--> Make Style To Class Animation
+.hvr-pulse  {
+    display: inline-block;
+    vertical-align: middle;
+    @include prefixAll(transform, translateZ(0));
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    @include prefixAll(backface-visibility, hidden);
+    -moz-osx-font-smoothing: grayscale;
+}
+.hvr-pulse:hover, .hvr-pulse:focus, .hvr-pulse:active {
+    @include prefixAll(animation-name, hvr-pulse);
+    @include prefixAll(animation-duration, 2s);
+    @include prefixAll(animation-timing-function, linear);
+    @include prefixAll(animation-iteration-count, infinite);
+}
+//--> Make Animation For All Browsers
+@include keyframe(hvr-pulse) {
+    25% { -webkit-transform: scale(1.1); transform: scale(1.1) }
+    75% { -webkit-transform: scale(0.9); transform: scale(0.9) }
+}
+//======================================= End Team ============================
+
+//======================================= Start Subscribe ============================
+.subscribe {
+    padding-top: 60px; padding-bottom: 60px; overflow: hidden; background: #EEE;
+    .h1 { color: #666; letter-spacing: 2px; margin-bottom: 20px }
+    .lead { margin-bottom: 30px }
+    form {
+        .form-control { border-radius: 0; margin-right: -5px; width: 300px }
+        .btn { border-radius: 0; padding-left: 25px; padding-right: 25px }
+    }
+    //--> Style In Small Screen
+    @include SScreen {
+        form {
+            .form-control {display: block; margin: 10px auto; margin-right: auto; }
+        }
+    }
+}
+//======================================= End Subscribe ============================
+
+//======================================= Start Statistics ============================
+.statistics {
+    background: url("../imgs/statistics/bg.png") center center fixed;
+    color: #EEE;
+    width: 100%;
+    min-height: 300px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    overflow: hidden;
+    @include bgCover;
+    .h1 { font-weight: bold; margin-bottom: 50px }
+    .stat {
+        color: #B8B5B5;
+        margin-bottom: 25px;
+        @include prefixAll(transition, all .7s ease-in-out);
+        &:hover { color: #FFF}
+        p { font-size: 60px; font-weight: bold; margin-bottom: -5px }
+        span { font-size: 18px}
+    }
+}
+//======================================= End Statistics ============================
+
+//======================================= Start Skills ============================
+.our-skills {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    overflow: hidden;
+    background: #EEE;
+    color: #555;
+    .h1 { font-weight: bold; margin-bottom: 50px }
+    .skills {
+        .progress {
+            height: 32px;
+            .progress-bar {
+                line-height: 32px;
+                font-size: 15px;
+                font-weight: bold;
+                text-align: left;
+                text-indent: 10px
+            }
+        }
+    }
+    .info {
+        h3 { margin-top: 0; font-weight: bold }
+    }
+}
+//======================================= End Skills ============================
+
+//======================================= Start Contact Us ============================
+.contact-us {
+    background: url("../imgs/ContatUs/bg.png") center center fixed;
+    @include bgCover;
+    .layer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        background-color: rgba(3, 3, 3, .7);
+        color: #DDD;
+        width: 100%;
+        min-height: 300px;
+        .lead { margin-bottom: 40px }
+        input[type="text"], textarea {
+            background-color: rgba(82, 78, 78, .4);
+            color: #DDD; border: none;
+        }
+        textarea { height: 108px; resize: none }
+    }
+}
+//======================================= End Contact Us ============================
+
+//======================================= Start Clients ============================
+.our-clients {
+    background-color: #EEE; padding-top: 20px; padding-bottom: 20px;
+    img {
+        @include opacity(.4);
+        margin-top: 20px;
+        margin-bottom: 20px;
+        @include prefixAll(transition, all .7s ease-in-out);
+        &:hover { @include opacity(1) }
+    }
+}
+//======================================= End Clients ============================

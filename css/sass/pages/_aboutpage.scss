@@ -1,0 +1,28 @@
+//======================================= Start Breadcrumbs ============================
+.breadcrumb { padding: 10px 0; margin: 0 }
+//======================================= End Breadcrumbs ============================
+
+//======================================= Start About Intro ============================
+.about-us {
+    padding-top: 60px; padding-bottom: 60px; background-color: #EEE;
+    h1 { font-weight: bold }
+    hr { width: 85% }
+    p { padding-left: 60px; padding-right: 60px }
+}
+//======================================= End About Intro ============================
+
+//======================================= Start About Features ============================
+.about-features {
+    padding-bottom: 40px; color: #333; background-color: #EEE;
+    h3 { font-weight: bold }
+    p { font-size: 14px; margin-bottom: 20px}
+}
+//======================================= End About Features ============================
+
+//======================================= Start About CEO ============================
+.about-ceo {
+    background-color: #CCC; padding-top: 20px;
+    p { line-height: 1.7 }
+    .btn-primary { background-color: #333; border-color: #333; margin-bottom: 30px}
+}
+//======================================= End About CEO ============================
